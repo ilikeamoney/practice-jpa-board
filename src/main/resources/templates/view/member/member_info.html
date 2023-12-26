@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Info</title>
+</head>
+<style>
+  #member-info {
+    margin: 0 auto;
+  }
+
+  #member-info tr td {
+    border: 1px solid black;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+  }
+</style>
+<body>
+  <table id="member-info">
+    <tr>
+      <td th:colspan="2">내 정보</td>
+    </tr>
+    <tr>
+      <td>번호</td>
+      <td th:text="${member.id}"></td>
+    </tr>
+    <tr>
+      <td>나이</td>
+      <td th:text="${member.age}"></td>
+    </tr>
+    <tr>
+      <td>아이디</td>
+      <td th:text="${member.memberId}"></td>
+    </tr>
+    <tr>
+      <td>비밀번호</td>
+      <td th:text="${member.memberPw}"></td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="window.location.href='/'">뒤로가기</button>
+      </td>
+      <td>
+        <button onclick="window.location.href='/edit_valid'">수정하기</button>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

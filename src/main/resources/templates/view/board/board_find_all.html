@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Find All</title>
+</head>
+<style>
+    #my-board-list {
+        margin: 0 auto;
+    }
+    #my-board-list tr td {
+        border: 1px solid black;
+        text-align: center;
+        width: 200px;
+        height: 50px;
+    }
+</style>
+<body>
+    <table id="my-board-list">
+        <tr>
+            <td th:colspan="2">전체 게시글 목록</td>
+        </tr>
+        <tr>
+            <td>번호</td>
+            <td>제목</td>
+        </tr>
+        <tr th:each="board : ${boards}">
+            <td th:text="${board.id}"></td>
+            <td>
+                <a th:href="@{/board_detail(boardId=${board.id})}" th:text="${board.title}"></a>
+            </td>
+        </tr>
+        <tr>
+            <td th:colspan="2">
+                <button onclick="window.location.href='/'">뒤로가기</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

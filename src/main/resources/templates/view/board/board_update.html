@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Update</title>
+</head>
+<style>
+    #board-update {
+        margin: 0 auto;
+    }
+
+    #board-update tr td {
+        border: 1px solid black;
+        text-align: center;
+        width: 200px;
+        height: 50px;
+    }
+</style>
+<body>
+<form th:action="@{/board_update(boardId=${board.id})}" method="post">
+    <table id="board-update">
+        <tr>
+            <td>번호</td>
+            <td th:text="${board.id}"></td>
+        </tr>
+        <tr>
+            <td>작성자</td>
+            <td th:text="${board.writerId}"></td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td>
+                <label>
+                    <input type="text" th:value="${board.title}" th:name="title">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td th:colspan="2">내용</td>
+        </tr>
+        <tr>
+            <td th:colspan="2">
+                <label>
+                    <textarea th:text="${board.content}" th:name="content" cols="30" rows="15"></textarea>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" th:onclick="|window.location.href='board_detail?boardId=${board.id}'|">뒤로가기</button>
+            </td>
+            <td>
+                <input type="submit" value="수정하기">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

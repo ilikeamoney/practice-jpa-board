@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Edit Form</title>
+</head>
+<style>
+    #edit-password-con {
+        margin: 0 auto;
+    }
+
+    #edit-password-con tr td {
+        border: 1px solid black;
+        text-align: center;
+        width: 200px;
+        height: 50px;
+    }
+</style>
+<body>
+<form th:action="@{/edit_password}" method="post">
+    <table id="edit-password-con">
+        <tr>
+            <td th:colspan="2">
+                <label for="edit-password">변경 비밀번호</label>
+                <input id="edit-password" type="password" name="editPassword">
+            </td>
+        </tr>
+        <tr>
+            <td th:colspan="2">
+                <label for="edit-password-valid">변경 비밀번호 확인</label>
+                <input id="edit-password-valid" type="password" name="editPasswordValid">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="window.location.href='/edit_valid'" value="뒤로가기">
+            </td>
+            <td>
+                <input type="submit" value="수정하기">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

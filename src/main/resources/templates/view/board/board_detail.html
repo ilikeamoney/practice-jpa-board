@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Detail</title>
+</head>
+<style>
+  #board-detail {
+    margin: 0 auto;
+  }
+
+  #board-detail tr td {
+    border: 1px solid black;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+  }
+</style>
+<body>
+<table id="board-detail">
+  <tr>
+    <td>번호</td>
+    <td th:text="${board.id}"></td>
+  </tr>
+  <tr>
+    <td>작성자</td>
+    <td th:text="${board.writerId}"></td>
+  </tr>
+  <tr>
+    <td>제목</td>
+    <td th:text="${board.title}"></td>
+  </tr>
+  <tr>
+    <td th:colspan="2">내용</td>
+  </tr>
+  <tr>
+    <td th:colspan="2">
+      <label>
+        <textarea th:text="${board.content}" cols="30" rows="15" disabled="disabled"></textarea>
+      </label>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="button" th:onclick="|window.location.href='/board_delete?boardId=${board.id}'|">삭제하기</button>
+    </td>
+    <td>
+      <button type="button" th:onclick="|window.location.href='/board_update?boardId=${board.id}'|">수정하기</button>
+    </td>
+  </tr>
+  <tr>
+    <td th:colspan="2">
+      <button type="button" onclick="window.location.href='/find_all_board'">뒤로가기</button>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Join Page</title>
+</head>
+<style>
+    .join-con {
+        margin: 0 auto;
+    }
+
+    .join-con tr td {
+        border: 1px solid black;
+        font-size: 32px;
+        text-align: center;
+    }
+</style>
+<body>
+<form th:action="@{/member_join}" th:method="post">
+    <table class="join-con">
+        <tr>
+            <td>회원가입</td>
+        </tr>
+        <tr>
+            <td>
+                <label for="memberId">아이디</label>
+                <input id="memberId" type="text" name="memberId" value="qwer">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="memberPw">비밀번호</label>
+                <input id="memberPw" type="password" name="memberPw" value="1234">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="age">나이</label>
+                <input id="age" type="text" name="age" value="22">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="가입하기">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

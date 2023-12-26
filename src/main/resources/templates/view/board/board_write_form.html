@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Write Form</title>
+</head>
+<style>
+    #board-form {
+        margin: 0 auto;
+    }
+    #board-form tr td {
+        border: 1px solid black;
+        text-align: center;
+        width: 200px;
+        height: 50px;
+    }
+
+</style>
+<body>
+<form th:action="@{/write_board}" th:method="post">
+    <table id="board-form">
+        <tr>
+            <td>게시글 작성</td>
+        </tr>
+        <tr>
+            <td>
+                <label th:for="board_title">제목</label>
+                <input id="board_title" th:name="title" placeholder="제목을 입력하세요." value="게시글 제목입니다.">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label th:for="board_content">내용</label>
+                <textarea id="board_content" th:name="content" placeholder="내용을 입력하세요." cols="30" rows="10">게시글 내용입니다.</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="글 쓰기">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

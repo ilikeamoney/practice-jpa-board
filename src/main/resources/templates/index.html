@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<style>
+    .main-con {
+        margin: 0 auto;
+    }
+
+    .main-con tr td {
+        border: 1px solid black;
+        font-size: 32px;
+    }
+</style>
+<body>
+<table th:if="${memLog == null}" class="main-con">
+    <tr>
+        <td>
+            <a th:href="@{/member_login}">로그인</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a th:href="@{/member_join}">회원가입</a>
+        </td>
+    </tr>
+</table>
+<table th:if="${memLog != null}" class="main-con">
+    <tr>
+        <td>
+            <a th:href="@{/my_info}">내 정보</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a th:href="@{/write_board}">글 쓰기</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a th:href="@{/find_all_board}">글 목록</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a th:href="@{/my_boards}">내가 쓴 글</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a th:href="@{/remove_member}">회원 탈퇴</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a th:href="@{/logout}">로그아웃</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
